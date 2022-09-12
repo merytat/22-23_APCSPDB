@@ -1,0 +1,33 @@
+/* Tag rules */
+th {
+    color: white;
+}
+
+h1{
+    background-color: paleturquoise;
+}
+
+body{
+    font-family: "American Typewriter";
+}
+
+table{
+    border: 0;
+    border-collapse: collapse;
+    /*border-spacing: 0;*/
+}
+
+/* Class rules */
+.header{
+    background-color: forestgreen;
+    text-align: left;
+}
+
+.dark{
+    background-color: paleturquoise;
+}
+
+/* ID rules */
+#bigTitle{
+    font-size: 16pt;
+}
