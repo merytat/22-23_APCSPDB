@@ -1,0 +1,30 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Name: </label>
+<input id="forTheName" type="text"><br>
+<label>Favourite Colour: </label>
+<input id="forTheColor" type="color"><br>
+<label>Birthday: </label>
+<input id="date" type="date"><br>
+<label>Check if HS student: </label>
+<input id="checked" type="checkbox"><br>
+<button onclick="ready()" > Print Values </button>
+<p id="result"></p>
+
+<script>
+    function ready(){
+        let name = document.getElementById("forTheName").value;
+        document.getElementById("result").innerHTML += name;
+        let color = document.getElementById("forTheColor").value;
+        document.getElementById("result").innerHTML += "<br>" + color;
+    }
+
+</script>
+</body>
+</html>

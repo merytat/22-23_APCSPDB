@@ -1,0 +1,20 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img onclick="checkIfLoaded()" width="200" src="pisa-tower-icon-cartoon-style-vector-24784031.jpg">
+
+<script>
+    function checkIfLoaded(){
+        let isLoaded = confirm("Can you see the picture?");
+        let newP = document.createElement("p");
+        newP.innerHTML = "The picture is loaded: " + isLoaded;
+        document.body.appendChild(newP);
+    }
+</script>
+</body>
+</html>
