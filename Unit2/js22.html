@@ -1,0 +1,33 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Text</title>
+</head>
+<body>
+<h1>Review Text</h1>
+<label>Text to Review</label>
+<input type="text" id="textId"><br>
+<label>Keyword</label>
+<input type="text" id="keyword"><br>
+<label>Replace with</label>
+<input type="text" id="replacement"><br>
+<h2 id="result"></h2>
+<button onclick="replaceText()">Replace Text</button>
+
+<script>
+    function replaceText(){
+        //read the values
+        let textVar = document.getElementById("textId").value;
+        let keyword = document.getElementById("keyword").value;
+        let replacement = document.getElementById("replacement").value;
+        let result = textVar.replaceAll(keyword,replacement);
+
+        document.getElementById("result").innerText = result;
+    }
+</script>
+
+
+</body>
+</html>
