@@ -1,0 +1,38 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean Operators</title>
+</head>
+<body>
+<h1>Boolean Operators</h1>
+<input id="number1" type="text">
+<input id="number2" type="text">
+<button onclick="isEqual()">Equal(==) </button>
+<button onclick="isDifferent()">Not equal(!=) </button>
+<button onclick="isBigger()">Greater than(>) </button>
+<button onclick="isLess()">Less than(<) </button>
+<h3 id="result"></h3>
+
+<script>
+    let n1,n2; //global variables
+
+    function readValues(){
+        n1 = document.getElementById("number1").value;
+        n2 = document.getElementById("number2").value;
+    }
+
+    function isEqual(){
+        readValues();
+        let result = n1 == n2;
+        document.getElementById("result").innerHTML = "It is " +
+            result + " that " + n1 + " is equal to " + n2;
+    }
+
+    function isDifferent(){
+
+    }
+</script>
+</body>
+</html>

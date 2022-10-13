@@ -1,0 +1,41 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form checker</title>
+</head>
+<body>
+<h1>Form checker</h1>
+<label>Name: </label>
+<input type="text" id="name">
+<label>Email: </label>
+<input onchange="checkEmail()" type="text" id="email">
+<label>Age: </label>
+<input onchange="checkAge()" type="text" id="age">
+
+<script>
+    function checkEmail(){
+        let email = document.getElementById("email").value;
+        if(email.indexOf("@") < 0 ){
+            alert("Type a correct email");
+        }
+    }
+
+    function checkAge(){
+        let age = document.getElementById("age").value;
+        if(age < 18){
+            alert("Too young");
+        }
+        else if(age >= 30){
+            alert("Too old");
+        }
+        else{
+            alert("You are the perfect age")
+        }
+    }
+
+</script>
+
+</body>
+</html>

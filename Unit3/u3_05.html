@@ -1,0 +1,35 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Protected</title>
+</head>
+<body>
+
+<h1>Login Protected</h1>
+<label>Input username: </label>
+<input type="text" id="user">
+<label>Input password: </label>
+<input type="password" id="pass">
+<button onclick="check()">Sign in</button>
+<button onclick="showPass()">Show Password</button>
+
+<script>
+    const password = "password1";
+    const username = "mtellez";
+
+    function showPass(){
+        document.getElementById("pass").type = "text";
+    }
+
+    function check() {
+        let enterPass = document.getElementById("pass").value;
+        let enterUser = document.getElementById("user").value;
+
+
+    }
+</script>
+
+</body>
+</html>

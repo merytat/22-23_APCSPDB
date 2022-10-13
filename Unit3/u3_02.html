@@ -1,0 +1,28 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Button</title>
+</head>
+<body>
+<button id="btn" onmouseover="move()">Click me if you can</button>
+
+<script>
+    let xPosition = 0;
+    function move(){
+        if(xPosition == 0){
+            xPosition = 250;
+        }
+        else{
+            xPosition = 0;
+        }
+
+        //change the css
+        document.getElementById("btn").style.transform =
+            "translate("+ xPosition + "px, 0px)";
+    }
+</script>
+
+</body>
+</html>
