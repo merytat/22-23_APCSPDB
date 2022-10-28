@@ -1,0 +1,27 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colorful Name</title>
+</head>
+<body>
+<label>Enter your name</label>
+<input type="text" id="name">
+<button onclick="clickMe()">Click Me</button>
+
+<script>
+    function clickMe(){
+        let name = document.getElementById("name").value;
+        let i = 0;
+        while(i<name.length){
+            let h3 = document.createElement("h3");
+            h3.innerHTML = name.substr(i,1);
+            h3.style.color = "rgb("
+            document.body.appendChild(h3);
+            i++;
+        }
+    }
+</script>
+</body>
+</html>
