@@ -1,0 +1,46 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="loadButtons()">
+<h1>What should we order for dinner:</h1>
+
+<div id="buttons">
+
+</div>
+<button id="b0" onclick="addVote(0)" >Ice Cream</button>
+<button id="b1"  onclick="addVote(1)" >Pizza</button>
+<button id="b2"  onclick="addVote(2)" >Soup</button>
+<br>
+<h3 id="v0">0</h3>
+<h3 id="v1">0</h3>
+<h3 id="v2">0</h3>
+<h3 id="result"></h3>
+
+<script>
+    let counters = [0,0,0,0,0,0];
+
+    function addVote(option){
+        counters[option]++;
+        document.getElementById("v"+option).innerHTML = counters[option];
+        document.getElementById("v"+option).style.fontSize = 14+counters[option]+"px";
+
+        let max = counters[0];
+        let maxIndex = 0;
+
+        for(let i = 1; i < counters.length; i++){
+            if(counters[i] > max){
+                max = counters[i];
+                maxIndex = i;
+            }
+        }
+        document.getElementById("result").innerHTML = "We are having " +
+            document.getElementById("b"+maxIndex).innerHTML;
+
+        }
+</script>
+</body>
+</html>

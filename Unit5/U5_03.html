@@ -1,0 +1,27 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let array1 = [1,0,2,3,4];
+    let array2 = [3,5,6,7,8];
+    let result = [];
+
+    array1.forEach(add); // for each element on array1 call add
+    alert(result);
+
+    function add(par1, par2, par3){
+        //par1 always refer to the value of the element
+        //par2 always refer to the index of the element
+        //par3 always refers to the entire array
+        result.push(par1 + array2[par2]);
+
+    }
+</script>
+</body>
+</html>

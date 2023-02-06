@@ -1,0 +1,62 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching Game</title>
+</head>
+<body>
+<h1>Searching Game</h1>
+<button onclick="generate()">Generate Numbers</button>
+<p id="result"></p>
+
+<br>
+<label>Type the number you are searching for: </label>
+<input id="value">
+<button onclick="search()">Search</button>
+<p id="result2"></p>
+
+<script>
+    let list =[];
+
+    function search(){
+        //read the input value
+        let searchedValue = document.getElementById("value").value;
+
+        //implement a linear search with a regular for loop
+        //if found -> change p -> value found at index __
+        //create flag
+        let flag = false;
+
+        for(let i=0; i<list.length; i++){
+            if(list[i] == searchedValue){
+                document.getElementById("result2").innerHTML = "Value found at position " + i;
+                flag = true;
+                i = list.length; //efficiency
+            }
+        }
+
+        //output not found
+        if(flag == false){
+            document.getElementById("result2").innerHTML = "Value not found"
+        }
+
+    }
+
+    function generate(){
+        for(let i=0; i<10; i++){
+            list.push(Math.floor(Math.random()*50)+1);
+
+            //js allows this, other languages (APCSP) won't
+            //list[i] = Math.floor(Math.random()*50)+1
+        }
+
+        document.getElementById("result").innerHTML = "Numbers Generated";
+        console.log(list);
+
+    }
+
+</script>
+
+</body>
+</html>

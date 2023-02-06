@@ -1,0 +1,38 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+<body>
+<label>Student Name: </label><input id="name"><br>
+<label>Student Age: </label><input id="age"><br>
+<label>Student Grade Level: </label><input id="glevel"><br>
+<button onclick="addStudent()">Add Student</button>
+<table id="result"></table>
+
+<script>
+    function addStudent(){
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let grade = document.getElementById("glevel").value;
+
+        let student = {name: name,
+                        age: age,
+                        gradeLevel: grade}
+
+        document.getElementById("result").innerHTML +=
+            "<tr><td>" + student.name + "</td>" +
+            "<td>" + student.age + "</td>" +
+            "<td>" + student.gradeLevel + "</td></tr>";
+
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("glevel").value = "";
+
+    }
+</script>
+
+</body>
+</html>

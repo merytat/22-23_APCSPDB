@@ -1,0 +1,36 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting</title>
+</head>
+<body onload="greet()">
+<h1 id="greeting"></h1>
+
+<input id="name">
+<button onclick="save()">Save name</button>
+
+<script>
+    function greet(){
+        let nameRetrieved = localStorage.getItem("storedName");
+
+        if(nameRetrieved != null){
+            let name = JSON.parse(nameRetrieved);
+            document.getElementById("greeting").innerHTML = "Hello " + name;
+        }
+        else{
+            document.getElementById("greeting").innerHTML = "Hello guest";
+        }
+    }
+    function save(){
+        let name = document.getElementById("name").value; //read from input
+        let nameJson = JSON.stringify(name); //convert to JSON
+        localStorage.setItem("storedName", nameJson); //save on localstorage
+
+        document.getElementById("greeting").innerHTML = "Hello " + name;
+    }
+</script>
+
+</body>
+</html>

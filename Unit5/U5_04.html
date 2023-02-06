@@ -1,0 +1,68 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Coin Flips</h1>
+<label>How many coin flips do you need?</label>
+<input id="num"><br>
+<button onclick="simulate()">Simulate</button>
+<h3 id="result"></h3>
+
+<script>
+
+    function simulate(){
+        countTails = 0;
+        countHeads = 0;
+        document.getElementById("result").innerHTML = "";
+        let coins = [];
+        let num = parseInt(document.getElementById("num").value);
+
+        for(let i = 0; i < num; i++){
+            let random = Math.floor(Math.random()*(1-0+1))+0;
+            coins.push(random);
+            if(random == 0){
+                document.getElementById("result").innerHTML += (i+1) +
+                    ". Heads <br>";
+            }
+            else{
+                document.getElementById("result").innerHTML += (i+1) +
+                    ". Tails <br>";
+            }
+        }
+        summarize(coins);
+        findMaxTails(coins);
+    }
+
+    function findMaxTails(coins){
+
+    }
+
+    function summarize(coins){
+        coins.forEach(check);
+        document.getElementById("result").innerHTML +=
+            "<br>Number of Heads: " +
+            countHeads + "<br>Number of Tails: " + countTails;
+        //use foreach to count number of 1 number of 0 and output
+    }
+
+    let countHeads = 0;
+    let countTails = 0;
+    function check(value){
+        if(value == 0){
+            countHeads++;
+        }
+        else{
+            countTails++
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Today is:</title>
+</head>
+<body>
+
+<input id="datePicker" type="date">
+<button onclick="getDay()">What day is today?</button>
+<h2>Today is:</h2>
+<h1 id="day"></h1>
+<h3 id="quote"></h3>
+
+<script>
+    function getDay(){
+        //let today = new Date();
+        let pickedDate = document.getElementById("datePicker").value;
+        let selectedDate = new Date(pickedDate);
+        //alert(pickedDate)
+        let day = selectedDate.getDay();
+
+        if(day == 5){
+            document.getElementById("day").innerHTML = "Friday"
+            document.getElementById("quote").innerHTML = "TGIF!"
+        }
+        else if(day == 2){
+            document.getElementById("day").innerHTML = "Tuesday"
+            document.getElementById("quote").innerHTML = "Taco Tuesday"
+        }
+
+    }
+</script>
+
+</body>
+</html>

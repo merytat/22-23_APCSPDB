@@ -1,0 +1,60 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>What should we order for dinner:</h1>
+
+<button onclick="addVote(1)" >Ice Cream</button>
+<button onclick="addVote(2)" >Pizza</button>
+<button onclick="addVote(3)" >Soup</button>
+<br>
+<h3 id="v1">0</h3>
+<h3 id="v2">0</h3>
+<h3 id="v3">0</h3>
+<h3 id="result"></h3>
+
+<script>
+    let iCount = 0;
+    let iPizza = 0;
+    let iSoup = 0;
+    function addVote(option){
+        if(option == 1){
+            iCount++;
+            document.getElementById("v1").innerHTML = iCount;
+            document.getElementById("v1").style.fontSize = 14+iCount+"px";
+        }
+        else if(option == 2){
+            iPizza++;
+            document.getElementById("v2").innerHTML = iPizza;
+            document.getElementById("v1").style.fontSize = 14+iPizza+"px";
+        }
+        else if(option == 3){
+            iSoup++;
+            document.getElementById("v3").innerHTML = iSoup;
+            document.getElementById("v1").style.fontSize = 14+iSoup+"px";
+        }
+        //check which option was clicked
+        //update counter
+        //update h3
+        //calculate winner
+        if(iCount > iPizza && iCount > iSoup){
+            document.getElementById("result").innerHTML = "We are having Ice Cream";
+        }
+        else if(iPizza > iCount && iPizza > iSoup){
+            document.getElementById("result").innerHTML = "We are having Pizza";
+        }
+        else
+        {
+            document.getElementById("result").innerHTML = "We are having Soup";
+        }
+
+
+
+    }
+</script>
+</body>
+</html>

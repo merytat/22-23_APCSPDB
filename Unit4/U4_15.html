@@ -1,0 +1,49 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Rectangle Data</h1>
+<label>Length:</label><br>
+<input id="length"><br>
+<label>Width:</label><br>
+<input id="width"><br>
+<button onclick="calculate()">Analyze Rectangle</button>
+<h3 id="result"></h3>
+
+<script>
+    function calculate(){
+        let r1 = readValues();
+        display(r1);
+    }
+
+    function readValues(){
+        let l = parseInt(document.getElementById("length").value);
+        let w = parseInt(document.getElementById("width").value);
+
+        let rect1 = {length: l, width: w,
+                    area:calcArea(l,w),
+                    perimeter:calcPerimeter(l,w)};
+        return rect1;
+    }
+
+    function display(rectangle){
+        let h3 = document.createElement("h3");
+        h3.innerHTML = "Area: " + rectangle.area + "<br>" +
+            "Perimeter: " + rectangle.perimeter;
+        document.body.appendChild(h3);
+    }
+
+    function calcPerimeter(l, w){
+        return (l+w)*2;
+    }
+
+    function calcArea(l,w){
+        return l*w;
+    }
+</script>
+</body>
+</html>

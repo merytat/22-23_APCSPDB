@@ -1,0 +1,39 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button disabled="true" id="left" onclick="move('left')"><</button>
+<img id="image" height="200" width="200" src="img/download-1.jpg">
+<button id="right" onclick="move('right')">></button>
+
+<script>
+    let images = ["img/download-1.jpg", "img/download-2.jpg",
+        "img/download-3.jpg", "img/download.jpg", "img/images.jpg"]
+    let index = 0;
+
+    function move(direction){
+        if(direction == "right"){
+            index++;
+            if(index >= images.length-1){
+                document.getElementById("right").disabled = true;
+            }
+            document.getElementById("left").disabled = false;
+        }
+        else{
+            index--;
+            if(index <= 0){
+                document.getElementById("left").disabled = true;
+            }
+            document.getElementById("right").disabled = false;
+        }
+        document.getElementById("image").src = images[index];
+    }
+
+</script>
+
+</body>
+</html>
