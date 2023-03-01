@@ -1,0 +1,40 @@
+<!-- Author: Mery Tellez -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="retrieveList()">
+<input id="task">
+<button onclick="addTask()">Add Task</button>
+<h3 id="taskList"></h3>
+
+<script>
+    let tasks = [];
+    function retrieveList(){
+        let list = localStorage.getItem("list");
+        if(list != null){
+            tasks = JSON.parse(list);
+            for(let i= 0; i<tasks.length; i++){
+                document.getElementById("taskList").innerHTML += "<br> " + tasks[i];
+            }
+        }
+    }
+    //onload to fetch and display any existent tasks on localstorage
+
+    function addTask(){
+        tasks.push(document.getElementById("task").value);
+        document.getElementById("taskList").innerHTML = "";
+        for(let i= 0; i<tasks.length; i++){
+            document.getElementById("taskList").innerHTML += "<br> " + tasks[i];
+        }
+
+        //store tasks in localstorage
+        let tasksJson = JSON.stringify(tasks);
+        localStorage.setItem("list", tasksJson);
+    }
+</script>
+
+</body>
+</html>
